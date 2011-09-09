@@ -26,10 +26,6 @@ export ANT_HOME
 ANT_OPTS="-Xmx1024m -XX:MaxPermSize=256m"
 export ANT_OPTS
 
-SOCIAL_HOME=$EXO_WORKING_DIR/eXoProjects/social/trunk
-
-ECM_HOME=$EXO_WORKING_DIR/eXoProjects/ecm/trunk
-
 JDK_HOME=$JAVA_HOME
 export JDK_HOME
 
