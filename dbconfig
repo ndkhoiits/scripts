@@ -1,0 +1,24 @@
+WORKING_SERVER=$PLATFORM_TOMCAT
+PROJECT_NAME=EXOGTN
+script_dir=$EXO_WORKING_DIR/scripts
+
+
+dbtype=$1
+if [ "$dbtype" == '' ]; then
+  dbtype='hsqldb'
+fi
+
+if [ "$2" = 'gtn' ]; then
+    typeset -u PROJECT_NAME=$2
+    PROJECT_NAME='GateIn Community'
+	WORKING_SERVER=$GATEIN_TOMCAT
+fi
+
+echo "[$PROJECT_NAME] Copying configuration file for DB - [$dbtype] ... to $WORKING_SERVER"
+config_file=$script_dir/configuration_$dbtype.properties
+
+if [ -f $config_file ]; then
+  cp -v $config_file $WORKING_SERVER/gatein/conf/configuration.properties  
+else
+  echo "Not found configuration file"
+fi

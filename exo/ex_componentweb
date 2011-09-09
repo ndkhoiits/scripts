@@ -1,0 +1,3 @@
+cd $EXO_WORKING_DIR/eXoProjects/portal/branches/2.5.x/component/web
+mvn clean install
+cp -v  $EXO_WORKING_DIR/eXoProjects/portal/branches/2.5.x/component/web/target/exo.portal.component.web-2.5.8-SNAPSHOT.jar $EXO_WORKING_DIR/exo-working/exo-tomcat/lib

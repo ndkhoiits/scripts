@@ -1,0 +1,14 @@
+WORKING_DIR=$PLATFORM_HOME
+WORKING_TOMCAT=$PLATFORM_TOMCAT
+VERSION=$PLATFORM_VERSION
+echo REMOVE DIRECTORY
+echo ---------------------------------------------------
+rm -rf $WORKING_TOMCAT/webapps/exoadmin
+rm -rf $WORKING_TOMCAT/webapps/exoadmin.war
+echo ---------------------------------------------------
+echo BUILD AND COPY TO WEBAPPS
+echo ---------------------------------------------------
+cd $WORKING_DIR/portlet/exoadmin
+mvn clean install -DskipTests
+cp -v  $WORKING_DIR/portlet/exoadmin/target/exoadmin.war $WORKING_TOMCAT/webapps/
+echo ---------------------------------------------------

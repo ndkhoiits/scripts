@@ -1,0 +1,6 @@
+WORKING_DIR=$WEBOS_HOME
+WORKING_TOMCAT=$WEBOS_TOMCAT
+VERSION=$WEBOS_VERSION
+cd $WORKING_DIR/webui/webos
+mvn clean install
+cp -v  $WORKING_DIR/webui/webos/target/exo.webos.webui.webos-$VERSION.jar $WORKING_TOMCAT/lib/

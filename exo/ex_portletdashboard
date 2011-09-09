@@ -1,0 +1,14 @@
+WORKING_DIR=$GATEIN_HOME
+WORKING_TOMCAT=$GATEIN_TOMCAT
+VERSION=$GATEIN_VERSION
+echo REMOVE DIRECTORY
+echo ---------------------------------------------------
+rm -rf $WORKING_TOMCAT/webapps/dashboard
+rm -rf $WORKING_TOMCAT/webapps/dashboard.war
+echo ---------------------------------------------------
+echo BUILD AND COPY TO WEBAPPS
+echo ---------------------------------------------------
+cd $WORKING_DIR/portlet/dashboard
+mvn clean install -DskipTests
+cp -v  $WORKING_DIR/portlet/dashboard/target/dashboard.war $WORKING_TOMCAT/webapps/
+echo ---------------------------------------------------

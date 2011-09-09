@@ -1,0 +1,42 @@
+WORKING_SERVER=$PLATFORM_TOMCAT
+
+DIR='lib'
+EXT='jar'
+if [ "$1" = 'war' ]; then
+	DIR='webapps'
+	EXT='war'
+fi
+
+if [ "$2" = 'webos' ]; then
+        typeset -u PROJECT_NAME=$2
+        PROJECT_NAME=WEBOS
+	WORKING_SERVER=$WEBOS_TOMCAT
+fi
+
+if [ "$2" = 'portal' ]; then
+	WORKING_SERVER=$PORTAL_TOMCAT
+fi
+
+if [ "$2" = 'plf' ]; then
+	WORKING_SERVER=$PLATFORM_TOMCAT
+	if [ "$3" = 'jboss' ]; then
+	   WORKING_SERVER=$PLATFORM_JBOSS
+	fi
+fi
+
+if [ "$2" = 'gtn' ]; then
+	WORKING_SERVER=$GATEIN_TOMCAT
+	
+	if [ "$3" = 'jboss' ]; then
+	   WORKING_SERVER=$GATEIN_JBOSS
+	fi
+fi
+
+
+if [ "$3" = 'jboss' ]; then
+   DIR='server/default/deploy/gatein.ear/lib'
+fi
+
+echo $WORKING_SERVER
+mvn clean install -DskipTests
+cp -v target/*.$EXT $WORKING_SERVER/$DIR
