@@ -19,6 +19,7 @@ config_file=$script_dir/configuration_$dbtype.properties
 
 if [ -f $config_file ]; then
   cp -v $config_file $WORKING_SERVER/gatein/conf/configuration.properties  
+  cp -v $THIRD_LIBS/*.jar $WORKING_SERVER/lib
 else
   echo "Not found configuration file"
 fi

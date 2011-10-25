@@ -21,6 +21,9 @@ export ANDROID_HOME
 M2_HOME=$EXO_WORKING_DIR/apache-maven-2.2.1
 export M2_HOME
 
+THIRD_LIBS=$EXO_WORKING_DIR/scripts/libraries
+export THIRD_LIBS
+
 ANT_HOME=$EXO_WORKING_DIR/apache-ant-1.7.1
 export ANT_HOME
 ANT_OPTS="-Xmx1024m -XX:MaxPermSize=256m"
@@ -32,6 +35,7 @@ export JDK_HOME
 SVN_HOME=$EXO_WORKING_DIR/svn-win32-1.6.6
 
 MAVEN_OPTS="-Xmx256M -XX:MaxPermSize=128m"
+export MAVEN_OPTS
 
 alias open="nautilus"
 
@@ -65,8 +69,7 @@ alias cdplf="cd $PLATFORM_HOME"
 alias cdplftomcat="cd $PLATFORM_TOMCAT"
 alias cdplfjboss="cd $PLATFORM_JBOSS"
 alias plfbuild="cd $PLATFORM_HOME && 
-		   mvn install -Ppkg-tomcat -DskipTests &&
-		   plfcpresource"
+		   mvn clean install -Ppkg-tomcat -DskipTests -Dgatein.dev"
 alias plfrun="JAVA_OPTS= &&  $PLATFORM_TOMCAT/bin/gatein-dev.sh run"
 alias plfrunnormal="$PLATFORM_TOMCAT/bin/gatein.sh run"
 alias plfcpresource="cp -Rv $PLATFORM_SCRIPT/docbase/* $PLATFORM_RESOURCE"
@@ -79,7 +82,7 @@ alias openplftomcat="open $PLATFORM_TOMCAT"
 ###########################################################################
 ###########################################################################
 
-GATEIN_VERSION=3.2.0-Beta01-SNAPSHOT
+GATEIN_VERSION=3.2.0-M02-SNAPSHOT
 export GATEIN_VERSION
 
 GATEIN_HOME=$EXO_WORKING_DIR/eXoProjects/gatein/portal/branches/sprint_working
@@ -104,7 +107,7 @@ alias gateinbuild="cd $GATEIN_HOME &&
 		   gateincpresource"
 alias gateinrun="JAVA_OPTS= && $GATEIN_TOMCAT/bin/gatein-dev.sh run"
 alias gateinrunnormal="$GATEIN_TOMCAT/bin/gatein.sh run"
-alias gateincpresource="cp -Rv $GATEIN_SCRIPT/docbase/* $GATEIN_RESOURCE"
+alias gateincpresource="mkdir -p $GATEIN_RESOURCE && cp -Rv $GATEIN_SCRIPT/docbase/* $GATEIN_RESOURCE"
 alias gateinremovedata="rm -rfv $GATEIN_TOMCAT/gatein/data"
 alias opengatein="open $GATEIN_HOME"
 alias opengateintomcat="open $GATEIN_TOMCAT"
