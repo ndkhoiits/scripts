@@ -1,6 +1,0 @@
-WORKING_DIR=$GATEIN_HOME
-WORKING_TOMCAT=$GATEIN_TOMCAT
-VERSION=$GATEIN_VERSION
-cd $WORKING_DIR/component/web/api
-mvn clean install -DskipTests
-cp -v $WORKING_DIR/component/web/api/target/*-$VERSION.jar $WORKING_TOMCAT/lib

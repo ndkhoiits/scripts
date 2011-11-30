@@ -1,6 +1,0 @@
-WORKING_DIR=$GATEIN_HOME
-WORKING_TOMCAT=$GATEIN_TOMCAT
-VERSION=$GATEIN_VERSION
-cp -Rv  $WORKING_DIR/portlet/dashboard/src/main/webapp/groovy/ $WORKING_TOMCAT/webapps/dashboard/
-cp -Rv  $WORKING_DIR/portlet/dashboard/src/main/webapp/skin/ $WORKING_TOMCAT/webapps/dashboard/
-echo ---------------------------------------------------

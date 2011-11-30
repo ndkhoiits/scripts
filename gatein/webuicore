@@ -1,6 +1,0 @@
-WORKING_DIR=$GATEIN_HOME
-WORKING_TOMCAT=$GATEIN_TOMCAT
-VERSION=$GATEIN_VERSION
-cd $WORKING_DIR/webui/core
-mvn clean install -DskipTests
-cp -v $WORKING_DIR/webui/core/target/exo.portal.webui.core-$VERSION.jar $WORKING_TOMCAT/lib

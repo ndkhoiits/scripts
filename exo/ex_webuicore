@@ -1,3 +1,0 @@
-cd $PORTAL_HOME/webui/core
-mvn clean install -DskipTests
-cp -v  -v $PORTAL_HOME/webui/core/target/exo.portal.webui.core-2.5.9-SNAPSHOT.jar $PORTAL_TOMCAT/lib

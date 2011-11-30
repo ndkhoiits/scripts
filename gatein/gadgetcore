@@ -1,6 +1,0 @@
-WORKING_DIR=$GATEIN_HOME
-WORKING_TOMCAT=$GATEIN_TOMCAT
-VERSION=$GATEIN_VERSION
-cd $WORKING_DIR/gadgets/core
-mvn clean install
-cp -v  $WORKING_DIR/gadgets/core/target/*-$VERSION.jar $WORKING_TOMCAT/lib/

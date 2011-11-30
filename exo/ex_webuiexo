@@ -1,6 +1,0 @@
-WORKING_DIR=$PORTAL_HOME
-WORKING_TOMCAT=$PORTAL_TOMCAT
-VERSION=$PORTAL_VERSION
-cd $WORKING_DIR/webui/eXo
-mvn clean install
-cp -v  $WORKING_DIR/webui/eXo/target/exo.portal.webui.eXo-$VERSION.jar $WORKING_TOMCAT/lib

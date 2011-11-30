@@ -39,4 +39,12 @@ fi
 
 echo $WORKING_SERVER
 mvn clean install -DskipTests
-cp -v target/*.$EXT $WORKING_SERVER/$DIR
+cp -v target/*.$EXT $WORKING_SERVER/$DIR/
+
+# Remove war files in webapps
+for f in target/*.war;do 
+	fn="${f%.*}"
+	filename=${fn##*/}
+	rm -rf $WORKING_SERVER/$DIR/$filename
+   printf "Removed file %s in webapps\n" "$filename"
+done

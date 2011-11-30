@@ -1,6 +1,0 @@
-WORKING_DIR=$GATEIN_HOME
-WORKING_TOMCAT=$GATEIN_TOMCAT
-VERSION=$GATEIN_VERSION
-cd $WORKING_DIR/webui/dashboard
-mvn clean install -DskipTests
-cp -v ./target/*-$VERSION.jar $WORKING_TOMCAT/lib
