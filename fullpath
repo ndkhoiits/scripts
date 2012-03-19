@@ -1,0 +1,1 @@
+echo "absolute path is $(readlink -f $1)"

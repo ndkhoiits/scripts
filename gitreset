@@ -1,0 +1,6 @@
+fileName=$1;
+#git add $fileName;
+#git reset $fileName;
+#git checkout $fileName;
+#git status;
+echo $fileName;

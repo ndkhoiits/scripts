@@ -1,6 +1,6 @@
 PLAY=/home/khoinguyen/software/programming/play-1.2.3
 # SET CLASSPATH
-JAVA_HOME=~/java/jdk1.6
+JAVA_HOME=~/working/jdk1.6
 export JAVA_HOME
 REMOTE_DEBUG="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
 # JAVA_OPTS="$JAVA_OPTS $REMOTE_DEBUG"
@@ -12,19 +12,21 @@ export IDEA_JDK
 IDEA_HOME=/home/khoinguyen/software/programming/idea-IU-95.627
 export IDEA_HOME
 
-EXO_WORKING_DIR=~/java
+EXO_WORKING_DIR=~/working
 export EXO_WORKING_DIR
+
+EXO_TOOLS=$EXO_WORKING_DIR/tools
 
 ANDROID_HOME=$EXO_WORKING_DIR/android-sdk-linux_86
 export ANDROID_HOME
 
-M2_HOME=$EXO_WORKING_DIR/apache-maven-2.2.1
+M2_HOME=$EXO_TOOLS/apache-maven-2.2.1
 export M2_HOME
 
 THIRD_LIBS=$EXO_WORKING_DIR/scripts/libraries
 export THIRD_LIBS
 
-ANT_HOME=$EXO_WORKING_DIR/apache-ant-1.7.1
+ANT_HOME=$EXO_TOOLS/apache-ant-1.8.3
 export ANT_HOME
 ANT_OPTS="-Xmx1024m -XX:MaxPermSize=256m"
 export ANT_OPTS
@@ -38,11 +40,12 @@ MAVEN_OPTS="-Xmx256M -XX:MaxPermSize=128m"
 export MAVEN_OPTS
 
 alias open="nautilus"
-
+alias mvn3="/home/khoinguyen/working/tools/apache-maven-3.0.4/bin/mvn"
+alias mvn="/home/khoinguyen/working/tools/apache-maven-2.2.1/bin/mvn"
 alias cdworking="cd $EXO_WORKING_DIR"
 alias cdprojects="cd $EXO_WORKING_DIR/eXoProjects"
 alias mvneclipse="mvn eclipse:clean && mvn eclipse:eclipse -DdownloadSources=true"
-alias editenv="gedit $EXO_WORKING_DIR/exoenv.sh &"
+alias editenv="gedit $EXO_WORKING_DIR/scripts/exoenv.sh &"
 alias openworking="open $EXO_WORKING_DIR"
 ###############################PLATFORM######################################
 ###########################################################################
@@ -85,7 +88,7 @@ alias openplftomcat="open $PLATFORM_TOMCAT"
 GATEIN_VERSION=3.2.0-M02-SNAPSHOT
 export GATEIN_VERSION
 
-GATEIN_HOME=$EXO_WORKING_DIR/eXoProjects/gatein/portal/branches/sprint_working
+GATEIN_HOME=$EXO_WORKING_DIR/eXoProjects/gatein-portal
 export GATEIN_HOME
 
 GATEIN_TOMCAT=$GATEIN_HOME/packaging/tomcat/pkg/tc6/target/tomcat6
@@ -181,6 +184,6 @@ alias webosremovedata="rm -rfv $WEBOS_TOMCAT/gatein/data"
 alias cdhome="cd ~"
 alias cdback='cd  $OLDPWD'
 
-PATH=$FIREFOX:$GATEIN_HOME/packaging/pkg/target/tomcat/bin:$EXO_WORKING_DIR/scripts:$GATEIN_SCRIPT:$PORTAL_SCRIPT:$WEBOS_SCRIPT:$PLATFORM_SCRIPT:$M2_HOME/bin:$JAVA_HOME/bin:$SVN_HOME/bin:$ANT_HOME/bin:$PATH:/home/khoinguyen/Downloads/firefox:$IDEA_JDK:$IDEA_HOME/bin:$PLAY
+PATH=$FIREFOX:$GATEIN_HOME/packaging/pkg/target/tomcat/bin:$EXO_WORKING_DIR/scripts:$GATEIN_SCRIPT:$PORTAL_SCRIPT:$WEBOS_SCRIPT:$PLATFORM_SCRIPT:$JAVA_HOME/bin:$SVN_HOME/bin:$ANT_HOME/bin:$PATH:/home/khoinguyen/Downloads/firefox:$IDEA_JDK:$IDEA_HOME/bin:$PLAY
 
 export PATH

@@ -1,4 +1,5 @@
 WORKING_SERVER=$PLATFORM_TOMCAT
+alias mvn="/home/khoinguyen/working/tools/apache-maven-2.2.1/bin/mvn"
 
 DIR='lib'
 EXT='jar'
@@ -38,7 +39,7 @@ if [ "$3" = 'jboss' ]; then
 fi
 
 echo $WORKING_SERVER
-mvn clean install -DskipTests
+/home/khoinguyen/working/tools/apache-maven-2.2.1/bin/mvn clean install -DskipTests
 if (cp -v target/*.$EXT $WORKING_SERVER/$DIR/); then
    # Remove war files in webapps
    if [ "$1" = 'war' ]; then
