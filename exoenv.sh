@@ -1,4 +1,4 @@
-PLAY=/home/khoinguyen/software/programming/play-1.2.3
+PLAY=/home/khoinguyen/working/eXoProjects/Play20
 # SET CLASSPATH
 JAVA_HOME=~/working/jdk1.6
 export JAVA_HOME
@@ -20,8 +20,7 @@ EXO_TOOLS=$EXO_WORKING_DIR/tools
 ANDROID_HOME=$EXO_WORKING_DIR/android-sdk-linux_86
 export ANDROID_HOME
 
-M2_HOME=$EXO_TOOLS/apache-maven-2.2.1
-export M2_HOME
+GRADE_HOME=$EXO_TOOLS/gradle-1.0-milestone-9
 
 THIRD_LIBS=$EXO_WORKING_DIR/scripts/libraries
 export THIRD_LIBS
@@ -106,8 +105,7 @@ alias cdgatein="cd $GATEIN_HOME"
 alias cdgateintomcat="cd $GATEIN_TOMCAT"
 alias cdgateinjboss="cd $GATEIN_JBOSS"
 alias gateinbuild="cd $GATEIN_HOME && 
-		   mvn install -Ppkg-tomcat -DskipTests &&
-		   gateincpresource"
+		   mvn clean install -Ppkg-tomcat6 -DskipTests -Dgatein.dev"
 alias gateinrun="JAVA_OPTS= && $GATEIN_TOMCAT/bin/gatein-dev.sh run"
 alias gateinrunnormal="$GATEIN_TOMCAT/bin/gatein.sh run"
 alias gateincpresource="mkdir -p $GATEIN_RESOURCE && cp -Rv $GATEIN_SCRIPT/docbase/* $GATEIN_RESOURCE"
@@ -184,6 +182,6 @@ alias webosremovedata="rm -rfv $WEBOS_TOMCAT/gatein/data"
 alias cdhome="cd ~"
 alias cdback='cd  $OLDPWD'
 
-PATH=$FIREFOX:$GATEIN_HOME/packaging/pkg/target/tomcat/bin:$EXO_WORKING_DIR/scripts:$GATEIN_SCRIPT:$PORTAL_SCRIPT:$WEBOS_SCRIPT:$PLATFORM_SCRIPT:$JAVA_HOME/bin:$SVN_HOME/bin:$ANT_HOME/bin:$PATH:/home/khoinguyen/Downloads/firefox:$IDEA_JDK:$IDEA_HOME/bin:$PLAY
+PATH=$PLAY:$FIREFOX:$GATEIN_HOME/packaging/pkg/target/tomcat/bin:$EXO_WORKING_DIR/scripts:$GATEIN_SCRIPT:$PORTAL_SCRIPT:$WEBOS_SCRIPT:$PLATFORM_SCRIPT:$JAVA_HOME/bin:$SVN_HOME/bin:$ANT_HOME/bin:$PATH:/home/khoinguyen/Downloads/firefox:$IDEA_JDK:$IDEA_HOME/bin:$GRADE_HOME/bin
 
 export PATH
